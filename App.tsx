@@ -2,6 +2,7 @@ import { Box, Center, NativeBaseProvider } from 'native-base';
 import React from 'react';
 import useCachedResources from './hooks/useCachedResources';
 import theme from './theme';
+import { t } from './utils';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -12,7 +13,7 @@ export default function App() {
   return (
     <NativeBaseProvider theme={theme}>
       <Center flex={1}>
-        <Box>Test</Box>
+        <Box>{t('home.test')}</Box>
       </Center>
     </NativeBaseProvider>
   );
