@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-fire-kitten",
-    "slug": "expo-fire-kitten",
+    "name": "expo-fire-base",
+    "slug": "expo-fire-base",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

@@ -1,24 +1,24 @@
 {
-  "name": "expo-fire-kitten",
+  "name": "expo-fire-base",
   "version": "1.1.2",
-  "description": "Expo boilerplate with Login/Register ready (Firebase + UI Kitten)",
+  "description": "Expo boilerplate with Login/Register ready (Firebase + NativeBase)",
   "keywords": [
     "expo",
     "boilerplate",
     "firebase",
-    "ui-kitten",
+    "native-base",
     "typescript"
   ],
   "author": "Vivo Xu <vivo@duapp.org>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/duapp/expo-fire-kitten-ts.git"
+    "url": "git+https://github.com/duapp/expo-fire-base.git"
   },
   "bugs": {
-    "url": "https://github.com/duapp/expo-fire-kitten-ts/issues"
+    "url": "https://github.com/duapp/expo-fire-base/issues"
   },
-  "homepage": "https://github.com/duapp/expo-fire-kitten-ts#readme",
+  "homepage": "https://github.com/duapp/expo-fire-base#readme",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -44,6 +44,7 @@
     "expo-splash-screen": "~0.11.2",
     "expo-status-bar": "~1.0.4",
     "expo-web-browser": "~9.2.0",
+    "native-base": "3.2.1-rc.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
@@ -51,7 +52,10 @@
     "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.4.0",
-    "react-native-web": "~0.13.12"
+    "react-native-svg": "12.1.1",
+    "react-native-web": "~0.13.12",
+    "styled-components": "^5.3.1",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
