@@ -1,5 +1,27 @@
 {
+  "login": {
+    "headline": "Welcome",
+    "subtitle": "Sign in to continue!",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "login": "Sign In",
+    "register": "Don't have an account? Sign Up"
+  },
+  "register": {
+    "title": "Sign Up",
+    "subtitle": "Please fill in the following information",
+    "displayNameLabel": "Your Name",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "register": "Sign Up"
+  },
   "home": {
-    "test": "Test"
+    "title": "Home",
+    "greeting": "This is HomeScreen"
+  },
+  "profile": {
+    "title": "Profile",
+    "greeting": "Hi, %{name}!",
+    "logout": "Sign Out"
   }
 }
