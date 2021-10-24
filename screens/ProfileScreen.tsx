@@ -13,7 +13,7 @@ export default function ProfileScreen() {
         {t('profile.greeting', { name: user!.displayName || 'Joe' })}
       </Heading>
       <VStack flex={1} justifyContent="center">
-        <Button colorScheme="indigo" onPress={() => AuthService.signOut()}>
+        <Button onPress={() => AuthService.signOut()}>
           {t('profile.logout')}
         </Button>
       </VStack>

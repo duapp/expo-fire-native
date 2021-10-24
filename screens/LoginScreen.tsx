@@ -1,21 +1,43 @@
-// adopted from https://docs.nativebase.io/login-signup-forms
 import React from 'react';
-import {
-  Heading,
-  VStack,
-  FormControl,
-  Input,
-  Button,
-  HStack,
-} from 'native-base';
+import { Heading, VStack, Button, HStack } from 'native-base';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import * as Yup from 'yup';
+import { Formik } from 'formik';
 import Screen from '../components/common/Screen';
 import { t } from '../utils';
 import { GuestNavigatorParamList } from '../navigators/GuestNavigator';
+import TextField from '../components/common/form/TextField';
+import { AuthService } from '../providers/AuthProvider';
+
+interface LoginFormValue {
+  email: string;
+  password: string;
+}
+
+const initialValues: LoginFormValue = {
+  email: '',
+  password: '',
+};
+
+const schema = Yup.object().shape({
+  email: Yup.string()
+    .required()
+    .email(t('login.emailError'))
+    .label(t('login.emailLabel')),
+  password: Yup.string().required().label(t('login.passwordLabel')),
+});
 
 export default function LoginScreen({
   navigation,
 }: NativeStackScreenProps<GuestNavigatorParamList, 'Login'>) {
+  const handleFormSubmit = async ({ email, password }: LoginFormValue) => {
+    try {
+      await AuthService.signInWithEmailAndPassword(email, password);
+    } catch ({ message }) {
+      console.log(message);
+    }
+  };
+
   return (
     <Screen>
       <Heading size="lg" fontWeight="600" color="coolGray.800">
@@ -25,44 +47,45 @@ export default function LoginScreen({
         {t('login.subtitle')}
       </Heading>
 
-      <VStack space={3} mt="5">
-        <FormControl isRequired>
-          <FormControl.Label
-            _text={{
-              color: 'coolGray.800',
-              fontSize: 'xs',
-              fontWeight: 500,
-            }}
-          >
-            {t('login.emailLabel')}
-          </FormControl.Label>
-          <Input />
-        </FormControl>
-        <FormControl isRequired>
-          <FormControl.Label
-            _text={{
-              color: 'coolGray.800',
-              fontSize: 'xs',
-              fontWeight: 500,
-            }}
-          >
-            {t('login.passwordLabel')}
-          </FormControl.Label>
-          <Input type="password" />
-        </FormControl>
-        <Button mt="2" colorScheme="indigo" _text={{ color: 'white' }}>
-          {t('login.login')}
-        </Button>
-        <HStack mt="6" justifyContent="center">
-          <Button
-            variant="link"
-            colorScheme="indigo"
-            onPress={() => navigation.navigate('Register')}
-          >
-            {t('login.register')}
-          </Button>
-        </HStack>
-      </VStack>
+      <Formik
+        validationSchema={schema}
+        initialValues={initialValues}
+        onSubmit={handleFormSubmit}
+      >
+        {({ handleSubmit, isSubmitting }) => (
+          <VStack space={3} mt="5">
+            <TextField
+              name="email"
+              label={t('login.emailLabel')}
+              placeholder={t('login.emailHint')}
+              isRequired
+            />
+            <TextField
+              name="password"
+              label={t('login.passwordLabel')}
+              placeholder={t('login.passwordHint')}
+              isRequired
+              password
+            />
+            <Button
+              mt="2"
+              onPress={() => handleSubmit()}
+              isLoading={isSubmitting}
+              isDisabled={isSubmitting}
+            >
+              {t('login.login')}
+            </Button>
+            <HStack mt="6" justifyContent="center">
+              <Button
+                variant="link"
+                onPress={() => navigation.navigate('Register')}
+              >
+                {t('login.register')}
+              </Button>
+            </HStack>
+          </VStack>
+        )}
+      </Formik>
     </Screen>
   );
 }

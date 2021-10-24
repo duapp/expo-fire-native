@@ -7,7 +7,7 @@ export default function BottomTabBar({ navigation, state }: BottomTabBarProps) {
   const select = (index: number) =>
     navigation.navigate(state.routeNames[index]);
   return (
-    <HStack bg="indigo.600" alignItems="center" safeAreaBottom shadow={6}>
+    <HStack bg="primary.600" alignItems="center" safeAreaBottom shadow={6}>
       <Pressable
         cursor="pointer"
         opacity={state.index === 0 ? 1 : 0.5}
