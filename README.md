@@ -19,7 +19,7 @@ This is a boilerplate for starting an Expo project with Login/Register flows rea
 Run the following command to generate a new Expo repo using this template:
 
 ```bash
-expo init -t expo-fire-base
+expo init -t expo-fire-native
 ```
 
 Feel free to update or remove top entires in your `package.json` before starting :)

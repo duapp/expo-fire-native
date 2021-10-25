@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-fire-base",
-    "slug": "expo-fire-base",
+    "name": "expo-fire-native",
+    "slug": "expo-fire-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

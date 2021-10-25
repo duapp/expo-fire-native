@@ -1,6 +1,6 @@
 {
-  "name": "expo-fire-base",
-  "version": "1.0.0",
+  "name": "expo-fire-native",
+  "version": "0.7.0",
   "description": "Expo boilerplate with Login/Register ready (Firebase + NativeBase)",
   "keywords": [
     "expo",
@@ -13,12 +13,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/duapp/expo-fire-base.git"
+    "url": "git+https://github.com/duapp/expo-fire-native.git"
   },
   "bugs": {
-    "url": "https://github.com/duapp/expo-fire-base/issues"
+    "url": "https://github.com/duapp/expo-fire-native/issues"
   },
-  "homepage": "https://github.com/duapp/expo-fire-base#readme",
+  "homepage": "https://github.com/duapp/expo-fire-native#readme",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
