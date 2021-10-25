@@ -2,6 +2,7 @@ import React from 'react';
 import { Center, HStack, Icon, Pressable, Text } from 'native-base';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { t } from '../../utils';
 
 export default function BottomTabBar({ navigation, state }: BottomTabBarProps) {
   const select = (index: number) =>
@@ -9,7 +10,6 @@ export default function BottomTabBar({ navigation, state }: BottomTabBarProps) {
   return (
     <HStack bg="primary.600" alignItems="center" safeAreaBottom shadow={6}>
       <Pressable
-        cursor="pointer"
         opacity={state.index === 0 ? 1 : 0.5}
         py="3"
         flex={1}
@@ -27,12 +27,11 @@ export default function BottomTabBar({ navigation, state }: BottomTabBarProps) {
             size="sm"
           />
           <Text color="white" fontSize="12">
-            Home
+            {t('home.title')}
           </Text>
         </Center>
       </Pressable>
       <Pressable
-        cursor="pointer"
         opacity={state.index === 1 ? 1 : 0.5}
         py="3"
         flex={1}
@@ -50,7 +49,7 @@ export default function BottomTabBar({ navigation, state }: BottomTabBarProps) {
             size="sm"
           />
           <Text color="white" fontSize="12">
-            Profile
+            {t('profile.title')}
           </Text>
         </Center>
       </Pressable>

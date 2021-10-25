@@ -27,6 +27,7 @@ export default function TextField(props: TextFieldProps) {
     <FormControl isRequired={isRequired} isInvalid={Boolean(meta.error)}>
       <FormControl.Label>{label}</FormControl.Label>
       <Input
+        testID="textfield-input"
         type={textHidden ? 'password' : 'text'}
         value={field.value}
         {...rest}
